@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="text-center mt-5">
+    <h1>{{ message }}</h1>
+    <p>Découvrez nos services et produits pour votre santé et fitness !</p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="{{ path('app_services') }}" class="btn btn-primary">Voir les Services</a>
+        <a href="{{ path('app_products') }}" class="btn btn-success">Voir les Produits</a>
+        <a href="{{ path('app_register') }}" class="btn btn-warning">Créer un compte</a>
+    </div>
+</div>
+{% endblock %}

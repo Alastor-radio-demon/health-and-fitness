@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande #{{ order.id }} - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="card mx-auto" style="max-width: 600px;">
+        <div class="card-header">
+            <h2 class="mb-0">Commande #{{ order.id }}</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Client:</strong> {{ order.user.name }}</p>
+            <p><strong>Total:</strong> {{ order.total }} DT</p>
+            <p><strong>Statut:</strong> 
+                <span class="badge {% if order.status == 'Livré' %}bg-success{% else %}bg-warning{% endif %}">
+                    {{ order.status }}
+                </span>
+            </p>
+            <p><strong>Date:</strong> {{ order.createdAt|date('d/m/Y H:i') }}</p>
+            
+            <h5 class="mt-4">Articles :</h5>
+            <ul class="list-group">
+                {% for item in order.items %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>{{ item.product }} (x{{ item.quantity }})</span>
+                    <span>{{ item.price }} DT</span>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <div class="mt-4">
+                <a href="{{ path('app_orders') }}" class="btn btn-secondary">Retour aux commandes</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

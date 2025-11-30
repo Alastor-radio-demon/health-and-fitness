@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservations - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mb-4">Réservations</h1>
+    
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Utilisateur</th>
+                    <th>Service</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.id }}</td>
+                    <td>{{ reservation.user.name }}</td>
+                    <td>{{ reservation.service.title }}</td>
+                    <td>{{ reservation.date|date('d/m/Y H:i') }}</td>
+                    <td>
+                        <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}" class="btn btn-primary btn-sm">Voir</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5" class="text-center">Aucune réservation trouvée.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

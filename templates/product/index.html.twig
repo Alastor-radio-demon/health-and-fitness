@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mb-4 text-center">Nos Produits</h1>
+    
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="h5 text-success">{{ product.price }} DT</p>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}" class="btn btn-primary">Voir détails</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

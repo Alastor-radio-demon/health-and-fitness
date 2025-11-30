@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ product.name }} - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body text-center">
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p class="h4 text-success">{{ product.price }} DT</p>
+            <a href="{{ path('app_products') }}" class="btn btn-secondary">Retour aux produits</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

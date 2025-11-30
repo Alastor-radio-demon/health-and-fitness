@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commandes - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mb-4">Commandes</h1>
+    
+    <div class="row">
+        {% for order in orders %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Commande #{{ order.id }}</h5>
+                    <p><strong>Client:</strong> {{ order.user.name }}</p>
+                    <p><strong>Total:</strong> {{ order.total }} DT</p>
+                    <p><strong>Statut:</strong> 
+                        <span class="badge {% if order.status == 'Livré' %}bg-success{% else %}bg-warning{% endif %}">
+                            {{ order.status }}
+                        </span>
+                    </p>
+                    <p><strong>Date:</strong> {{ order.createdAt|date('d/m/Y') }}</p>
+                    <a href="{{ path('app_order_show', {'id': order.id}) }}" class="btn btn-primary">Voir détails</a>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                Aucune commande trouvée.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

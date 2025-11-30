@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mb-4">🛒 Mon Panier</h1>
+    
+    {% if cartItems is empty %}
+        <div class="alert alert-info text-center">
+            <div class="py-4">
+                <h4>Votre panier est vide</h4>
+                <p class="mb-3">Découvrez nos produits et services pour commencer vos achats !</p>
+                <a href="{{ path('app_products') }}" class="btn btn-success me-2">Voir les produits</a>
+                <a href="{{ path('app_services') }}" class="btn btn-outline-primary">Voir les services</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Produit</th>
+                        <th>Utilisateur</th>
+                        <th>Prix unitaire</th>
+                        <th>Quantité</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set totalPanier = 0 %}
+                    {% for item in cartItems %}
+                        {% set totalItem = item.product.price * item.quantity %}
+                        {% set totalPanier = totalPanier + totalItem %}
+                        <tr>
+                            <td>
+                                <strong>{{ item.product.name }}</strong>
+                                <br>
+                                <small class="text-muted">{{ item.product.description }}</small>
+                            </td>
+                            <td>{{ item.user.name }}</td>
+                            <td>{{ item.product.price }} DT</td>
+                            <td>{{ item.quantity }}</td>
+                            <td class="text-success fw-bold">{{ totalItem }} DT</td>
+                            <td>
+                                <a href="{{ path('app_cart_item_show', {'id': item.id}) }}" class="btn btn-primary btn-sm">Voir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot class="table-dark">
+                    <tr>
+                        <td colspan="4" class="text-end"><strong>Total du panier :</strong></td>
+                        <td colspan="2" class="text-success fw-bold h5">{{ totalPanier }} DT</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{{ path('app_products') }}" class="btn btn-outline-primary me-2">← Continuer mes achats</a>
+            <button class="btn btn-success btn-lg">Commander maintenant</button>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

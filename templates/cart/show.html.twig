@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ cartItem.product.name }} - Panier - Health & Fitness{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-header">
+            <h2 class="mb-0">Détails de l'article</h2>
+        </div>
+        <div class="card-body text-center">
+            <h3>{{ cartItem.product.name }}</h3>
+            <p class="text-muted">{{ cartItem.product.description }}</p>
+            
+            <div class="row mt-4">
+                <div class="col-6">
+                    <p><strong>Prix unitaire :</strong></p>
+                    <p class="h5 text-success">{{ cartItem.product.price }} DT</p>
+                </div>
+                <div class="col-6">
+                    <p><strong>Quantité :</strong></p>
+                    <p class="h5">{{ cartItem.quantity }}</p>
+                </div>
+            </div>
+            
+            <div class="mt-4 p-3 bg-light rounded">
+                <p class="mb-1"><strong>Total pour cet article :</strong></p>
+                <p class="h4 text-success">{{ cartItem.product.price * cartItem.quantity }} DT</p>
+            </div>
+            
+            <div class="mt-4">
+                <a href="{{ path('app_cart') }}" class="btn btn-secondary">← Retour au panier</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
