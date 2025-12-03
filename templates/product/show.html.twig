@@ -4,12 +4,16 @@
 
 {% block body %}
 <div class="container">
-    <div class="card mx-auto" style="max-width: 500px;">
+    <div class="card mx-auto" style="max-width: 600px;">
+        <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+            <img src="{{ product.image }}" class="img-fluid" alt="{{ product.name }}" style="max-height: 380px; object-fit: contain;">
+        </div>
         <div class="card-body text-center">
             <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <p class="h4 text-success">{{ product.price }} DT</p>
-            <a href="{{ path('app_products') }}" class="btn btn-secondary">Retour aux produits</a>
+            <p class="lead">{{ product.description }}</p>
+            <p class="h3 text-success mb-4">{{ product.price }} DT</p>
+            <a href="{{ path('app_cart') }}" class="btn btn-success btn-lg me-2">🛒 Ajouter au panier</a>
+            <a href="{{ path('app_products') }}" class="btn btn-secondary btn-lg">Retour aux produits</a>
         </div>
     </div>
 </div>

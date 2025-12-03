@@ -16,7 +16,7 @@ class ServiceController extends AbstractController
                 'title' => 'Coaching Personnel',
                 'description' => 'Séances individuelles avec un coach certifié pour un programme sur mesure adapté à vos objectifs.',
                 'price' => 120,
-                'image' => 'coaching.jpg',
+                'image' => 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop',
                 'duration' => 60,
                 'type' => 'Individuel'
             ],
@@ -25,7 +25,7 @@ class ServiceController extends AbstractController
                 'title' => 'Cours de Yoga',
                 'description' => 'Séances de yoga en groupe pour améliorer flexibilité et relaxation.',
                 'price' => 80,
-                'image' => 'yoga.jpg',
+                'image' => 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop',
                 'duration' => 90,
                 'type' => 'Groupe'
             ],
@@ -34,7 +34,7 @@ class ServiceController extends AbstractController
                 'title' => 'HIIT Training',
                 'description' => 'Entraînement par intervalles à haute intensité pour brûler les graisses.',
                 'price' => 65,
-                'image' => 'hiit.jpg',
+                'image' => 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=400&h=300&fit=crop',
                 'duration' => 45,
                 'type' => 'Groupe'
             ],
@@ -43,7 +43,7 @@ class ServiceController extends AbstractController
                 'title' => 'Consultation Nutrition',
                 'description' => 'Plan alimentaire personnalisé avec suivi par un nutritionniste diplômé.',
                 'price' => 150,
-                'image' => 'nutrition.jpg',
+                'image' => 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&h=300&fit=crop',
                 'duration' => 60,
                 'type' => 'Individuel'
             ],
@@ -52,7 +52,7 @@ class ServiceController extends AbstractController
                 'title' => 'CrossFit',
                 'description' => 'Entraînement fonctionnel haute intensité avec équipements spécialisés.',
                 'price' => 95,
-                'image' => 'crossfit.jpg',
+                'image' => 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=300&fit=crop',
                 'duration' => 60,
                 'type' => 'Groupe'
             ],
@@ -61,7 +61,7 @@ class ServiceController extends AbstractController
                 'title' => 'Pilates',
                 'description' => 'Renforcement musculaire en profondeur avec concentration sur la posture.',
                 'price' => 70,
-                'image' => 'pilates.jpg',
+                'image' => 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop',
                 'duration' => 55,
                 'type' => 'Groupe'
             ]

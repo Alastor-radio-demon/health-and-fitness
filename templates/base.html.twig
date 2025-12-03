@@ -9,9 +9,32 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_home') }}">🏋️ Health & Fitness</a>
-        <div class="navbar-nav">
-            <a class="nav-link" href="{{ path('app_products') }}">Produits</a>
-            <a class="nav-link" href="{{ path('app_services') }}">Services</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_products') }}">🛍️ Produits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_services') }}">💪 Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_reservations') }}">📅 Réservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_orders') }}">📦 Commandes</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_cart') }}">🛒 Panier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_users') }}">👤 Utilisateurs</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -19,5 +42,7 @@
 <main class="container mt-4">
     {% block body %}{% endblock %}
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>  

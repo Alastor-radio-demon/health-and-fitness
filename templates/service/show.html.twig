@@ -4,12 +4,20 @@
 
 {% block body %}
 <div class="container">
-    <div class="card mx-auto" style="max-width: 500px;">
+    <div class="card mx-auto" style="max-width: 600px;">
+        <div class="bg-light d-flex align-items-center justify-content-center" style="height: 400px;">
+            <img src="{{ service.image }}" class="img-fluid" alt="{{ service.title }}" style="max-height: 380px; object-fit: contain;">
+        </div>
         <div class="card-body text-center">
             <h2>{{ service.title }}</h2>
-            <p>{{ service.description }}</p>
-            <p class="h4 text-success">{{ service.price }} DT</p>
-            <a href="{{ path('app_services') }}" class="btn btn-secondary">Retour aux services</a>
+            <p class="lead">{{ service.description }}</p>
+            <div class="mb-3">
+                <span class="badge bg-secondary fs-6">⏱️ {{ service.duration }} min</span>
+                <span class="badge bg-info fs-6">{{ service.type }}</span>
+            </div>
+            <p class="h3 text-success mb-4">{{ service.price }} DT</p>
+            <a href="{{ path('app_reservations') }}" class="btn btn-primary btn-lg me-2">📅 Réserver</a>
+            <a href="{{ path('app_services') }}" class="btn btn-secondary btn-lg">Retour aux services</a>
         </div>
     </div>
 </div>
